@@ -84,21 +84,25 @@ export default function Home() {
               title="X.com / Twitter"
               desc="Documenting my journey on building apps and business"
               icon={FaTwitter}
+              link="https://x.com/Zhafran_SY"
             />
             <SocMed
               title="Instagram"
               desc="Just for fun"
               icon={FaInstagramSquare}
+              link="https://www.instagram.com/zafran_sy?igsh=ZmZ2eTRkc2EzcnRk"
             />
             <SocMed
               title="Github"
               desc="Code repositories for my projects"
               icon={FaGithub}
+              link="https://github.com/ZafranSY"
             />
             <SocMed
               title="Linkedin"
               desc="Professional life"
               icon={FaLinkedin}
+              link="https://www.linkedin.com/in/zafran-sakowi-065b34215/"
             />
           </div>
 
