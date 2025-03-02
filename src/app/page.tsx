@@ -3,6 +3,8 @@ import { TbWorld } from 'react-icons/tb';
 import ZafranPic from '../../public/zafran-pic.jpg';
 import SocMed from './component/SocMed';
 import ProjectCard from './component/projectCard';
+import ExtraCocuCard from './component/ExtraCocuCard';
+import Education from './component/Education';
 import { FaTwitter } from 'react-icons/fa';
 import { FaInstagramSquare } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
@@ -148,6 +150,31 @@ export default function Home() {
               date="Since September 2024"
               link="https://www.youtube.com/watch?v=jP4LHn4ePfU"
               image="/zafran-pic.jpg"
+            />
+          </div>
+          {/*Educatoin  section */}
+          <div className="mt-8">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              Education
+            </h2>
+            <Education
+              title="Bachelor of Computer Science ( Software Engineering )"
+              uniName="University of Technology Malaysia"
+              desc="Coursework includes software development, algorithms, databases, and system design.Achieved strong academic performance and participated in industry-related projects"
+              image="/utmLogo.png"
+              date="Oct 2022 - July 2026"
+            />
+          </div>
+          {/*Extra cocuriculum section */}
+          <div className="mt-8">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              Extracurricular Activities
+            </h2>
+            <ExtraCocuCard
+              title="PAL (Peer Assistant Leadership) Leader"
+              desc="• Provided academic support in mathematics to peers during matriculation, balancing a tight
+                     schedule while honing leadership and teaching skills."
+              date="August 2022-July 2023"
             />
           </div>
         </div>
