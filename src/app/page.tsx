@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { TbWorld } from 'react-icons/tb';
 import ZafranPic from '../../public/zafran-pic.jpg';
-import { ChevronRight } from 'lucide-react';
 import SocMed from './component/SocMed';
 import ProjectCard from './component/projectCard';
 import { FaTwitter } from 'react-icons/fa';

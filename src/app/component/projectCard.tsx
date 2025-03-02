@@ -25,8 +25,8 @@ const projectCard: React.FC<projectProps> = ({
       } else if (parseUrl.hostname.includes('youtube.com')) {
         return parseUrl.searchParams.get('v');
       }
-    } catch (error) {
-      console.error('Invalid Youtube URL: ', url);
+    } catch {
+      console.log('Invalid Youtube URL: ', url);
     }
     return null;
   };
