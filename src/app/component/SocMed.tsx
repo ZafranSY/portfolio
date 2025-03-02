@@ -10,13 +10,8 @@ type cardProps = {
 };
 const SocMed: React.FC<cardProps> = ({ title, desc, icon: Icon, link }) => {
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center justify-between p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-    >
-      <div className="flex items-center justify-between p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      <div className="flex items-center justify-between my-3 p-4 bg-white hover:text-black rounded-lg shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer">
         <div className="flex items-center gap-4">
           <div className="text-2xl">{Icon && <Icon />}</div>
           <div>
@@ -25,7 +20,7 @@ const SocMed: React.FC<cardProps> = ({ title, desc, icon: Icon, link }) => {
           </div>
         </div>
 
-        <div className="text-gray-400 text-3xl">
+        <div className="text-gray-400 text-3xl ">
           <MdKeyboardArrowRight />
         </div>
       </div>
