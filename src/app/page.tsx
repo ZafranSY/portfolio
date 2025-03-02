@@ -53,13 +53,10 @@ export default function Home() {
               <li className="flex gap-3">
                 <span className="w-2 h-2 bg-gray-700 mt-2 rotate-45 transform flex-shrink-0"></span>
                 <span className="text-sm text-gray-700">
-                  Creator of "StudySync," a platform for streamlining academic
-                  link management, and "Co-Curricular Activity Management System
-                  (CCAMS)," a Laravel-based app optimizCreator of
-                  &quot;StudySync,&quot; a platform for streamlining academic
-                  link management, and &quot;Co-Curricular Activity Management
-                  System (CCAMS),&quot; a Laravel-based app optimizing school
-                  workflows. ing school workflows.
+                  Creator of &quot;StudySync,&quot; a platform for streamlining
+                  academic link management, and &quot;Co-Curricular Activity
+                  Management System (CCAMS),&quot; a Laravel-based app
+                  optimizing school workflows.
                 </span>
               </li>
               <li className="flex gap-3">
