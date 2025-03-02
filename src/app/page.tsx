@@ -164,6 +164,20 @@ export default function Home() {
               image="/utmLogo.png"
               date="Oct 2022 - July 2026"
             />
+            <Education
+              title="Physical Science"
+              uniName="Matriculation Kelantan"
+              desc="Coursework includes software development, algorithms, databases, and system design.Achieved strong academic performance and participated in industry-related projects"
+              image="/kmktLogo.png"
+              date="July 2021 - July 2022"
+            />
+            <Education
+              title="Pure Science"
+              uniName="SMK Bukit Bunga"
+              desc="Coursework includes software development, algorithms, databases, and system design.Achieved strong academic performance and participated in industry-related projects"
+              image="/smkbbLogo.png"
+              date="Jan 2016 - Dec 2020"
+            />
           </div>
           {/*Extra cocuriculum section */}
           <div className="mt-8">
@@ -171,10 +185,51 @@ export default function Home() {
               Extracurricular Activities
             </h2>
             <ExtraCocuCard
-              title="PAL (Peer Assistant Leadership) Leader"
-              desc="• Provided academic support in mathematics to peers during matriculation, balancing a tight
+              title="HatchQuest @ UTM 2024!"
+              desc="pitch Signify, an app translating sign language to improve communication with mute and deaf individuals. Gained insights from startup coaches and entrepreneurs while refining our concept. Developed skills in teamwork, pitching, and innovative problem-solving."
+              date="Nov 2024 - Dec 2024"
+            />
+            <ExtraCocuCard
+              title="Jazari Robotic Games"
+              desc="Provided academic support in mathematics to peers during matriculation, balancing a tight
                      schedule while honing leadership and teaching skills."
-              date="August 2022-July 2023"
+              date="Nov 2022 - Aug 2024"
+            />
+            <ExtraCocuCard
+              title="Jazari Robotic Games"
+              desc="Provided academic support in mathematics to peers during matriculation, balancing a tight
+                     schedule while honing leadership and teaching skills."
+              date="Nov 2022 - Aug 2024"
+            />
+            <ExtraCocuCard
+              title="PAL (Peer Assistant Leadership) Leader"
+              desc="Provided academic support in mathematics to peers during matriculation, balancing a tight
+                     schedule while honing leadership and teaching skills."
+              date="Aug 2022-July 2023"
+            />
+            <ExtraCocuCard
+              title="Technology Community 2.0"
+              desc="Competed in a robotics competition, designing and programming a robot to follow a black line.
+               Developed skills in problem-solving and robotic systems."
+              date="January 2024 - May 2024"
+            />
+            <ExtraCocuCard
+              title="Jazari Recruitment Games 2023 (JRW2023)"
+              desc="Served as part of the technical team responsible for venue arrangements, ensuring the smoothexecution of the event."
+              date="Aug 2022-July 2023"
+            />
+          </div>
+          {/*Educatoin  section */}
+          <div className="mt-8">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              Work Experience
+            </h2>
+            <Education
+              title="Cashier and Customer Service"
+              uniName="A&W Food Services"
+              desc="Managed customized orders, coordinated with the kitchen team, and handled high-volume tasks efficiently. Gained practical experience in communication, teamwork, and task prioritization in a fast-paced setting."
+              image="/AnwLogo.png"
+              date="Aug 2024 - Oct 2024"
             />
           </div>
         </div>
