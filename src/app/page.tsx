@@ -43,8 +43,8 @@ export default function Home() {
         <div className="p-6">
           {/* Bio section */}
           <p className="text-gray-900 font-medium mb-4">
-            I'm a 21 y/o third-year Software Engineering student, developer, and
-            aspiring entrepreneur from Malaysia.
+            I&apos;m a 21 y/o third-year Software Engineering student,
+            developer, and aspiring entrepreneur from Malaysia.
           </p>
 
           {/* Bullet points */}
@@ -55,7 +55,11 @@ export default function Home() {
                 <span className="text-sm text-gray-700">
                   Creator of "StudySync," a platform for streamlining academic
                   link management, and "Co-Curricular Activity Management System
-                  (CCAMS)," a Laravel-based app optimizing school workflows.
+                  (CCAMS)," a Laravel-based app optimizCreator of
+                  &quot;StudySync,&quot; a platform for streamlining academic
+                  link management, and &quot;Co-Curricular Activity Management
+                  System (CCAMS),&quot; a Laravel-based app optimizing school
+                  workflows. ing school workflows.
                 </span>
               </li>
               <li className="flex gap-3">
