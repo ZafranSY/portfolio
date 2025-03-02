@@ -34,7 +34,7 @@ const projectCard: React.FC<projectProps> = ({
   const videoId = getYoutubeLinkId(link);
 
   return (
-    <div className="rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 bg-white">
+    <div className="rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 bg-white my-5">
       <div className="p-6">
         {/* Header with logo/image and title */}
 
