@@ -237,21 +237,22 @@ export default function Home() {
               </span>
               Currently Building
             </h2>
+
             <ProjectCard
-              title="Text Behind Image"
-              simple_desc="Create text-behind-image designs easily"
-              full_desc="Creating stunning text-behind-image designs are difficult and there's not many easy-to-use tools online that helps you do that. So I built my own free tool, in 3 hours with AI tools such as cursor.sh, that helps you create these stunning text-behind-image designs easily on your images. Since launching, the tool has got 300K users, 3 million views on X/Twitter, #1 Product of the Day on Product Hunt, and notable shoutouts from people like Ryan Hoover, the founder of Product Hunt."
-              date="Since September 2024"
-              link="https://www.youtube.com/watch?v=jP4LHn4ePfU"
-              image="/zafran-pic.jpg"
-            />
-            <ProjectCard
-              title="Text Behind Image"
-              simple_desc="Create text-behind-image designs easily"
-              full_desc="Creating stunning text-behind-image designs are difficult and there's not many easy-to-use tools online that helps you do that. So I built my own free tool, in 3 hours with AI tools such as cursor.sh, that helps you create these stunning text-behind-image designs easily on your images. Since launching, the tool has got 300K users, 3 million views on X/Twitter, #1 Product of the Day on Product Hunt, and notable shoutouts from people like Ryan Hoover, the founder of Product Hunt."
-              date="Since September 2024"
-              link="https://www.youtube.com/watch?v=jP4LHn4ePfU"
-              image="/zafran-pic.jpg"
+              title="Recommendation App"
+              simple_desc="Personalized recommendation platform built with MERN stack"
+              full_desc="Building a recommendation system that leverages user behavior and preferences to suggest personalized content. The application uses MongoDB for flexible data storage, Express and Node.js for a robust backend API, and React for a responsive frontend interface."
+              date="Since January 2025"
+              image="/RA.png"
+              technologies={[
+                'MongoDB',
+                'Express',
+                'React',
+                'Node.js',
+                'JWT',
+                'Redux',
+              ]}
+              tags={['Full Stack', 'MERN', 'Currently Building']}
             />
           </div>
 
@@ -275,20 +276,77 @@ export default function Home() {
               Previous Projects
             </h2>
             <ProjectCard
-              title="Text Behind Image"
-              simple_desc="Create text-behind-image designs easily"
-              full_desc="Creating stunning text-behind-image designs are difficult and there's not many easy-to-use tools online that helps you do that. So I built my own free tool, in 3 hours with AI tools such as cursor.sh, that helps you create these stunning text-behind-image designs easily on your images. Since launching, the tool has got 300K users, 3 million views on X/Twitter, #1 Product of the Day on Product Hunt, and notable shoutouts from people like Ryan Hoover, the founder of Product Hunt."
-              date="Since September 2024"
-              link="https://www.youtube.com/watch?v=jP4LHn4ePfU"
-              image="/zafran-pic.jpg"
+              title="Takziah Card"
+              simple_desc="PHP-based tool for effortless resume creation"
+              full_desc="Developed a web-based tool to create personalized condolence cards using Next.js and
+Tailwind CSS.Inspired by the loss of a best friend's parent, this tool was created to support grieving
+individuals by offering a heartfelt and meaningful way to express sympathy.
+Incorporated existing APIs such as Remove.bg to enhance functionality and streamline the user
+experience. Aimed at providing emotional support and fostering connections during times of
+grief, helping users express their condolences more thoughtfully."
+              date="2025"
+              image="/Takziah.svg"
+              projectImg="/TakziahUI.png"
+              technologies={[
+                'Nextjs',
+                'Tailwind CSS',
+                'Typescript',
+                'PDF Generation',
+              ]}
+              link="https://www.takziah.xyz/"
+              tags={['Tool', 'Productivity']}
             />
             <ProjectCard
-              title="Text Behind Image"
-              simple_desc="Create text-behind-image designs easily"
-              full_desc="Creating stunning text-behind-image designs are difficult and there's not many easy-to-use tools online that helps you do that. So I built my own free tool, in 3 hours with AI tools such as cursor.sh, that helps you create these stunning text-behind-image designs easily on your images. Since launching, the tool has got 300K users, 3 million views on X/Twitter, #1 Product of the Day on Product Hunt, and notable shoutouts from people like Ryan Hoover, the founder of Product Hunt."
-              date="Since September 2024"
-              link="https://www.youtube.com/watch?v=jP4LHn4ePfU"
-              image="/zafran-pic.jpg"
+              title="Co-Curricular Activity Management System"
+              simple_desc="Laravel-based system for streamlining school activity management"
+              full_desc="Developed a Laravel-based web application to streamline and optimize school co-curricular activity management, addressing inefficiencies in administrative workflows. Collaborated with a team of 3 developers, applying MVC architecture and Eloquent ORM for robust data handling and scalable design. Incorporated Factory Method, Observer, and Composite design patterns to enhance maintainability and modularity, ensuring a clean and extensible codebase. Streamlined administrative processes, saving over 6 hours weekly for school staff."
+              date="2023"
+              image="/ccms.png"
+              technologies={[
+                'Laravel',
+                'PHP',
+                'MySQL',
+                'Bootstrap',
+                'JavaScript',
+              ]}
+              tags={['Web Application', 'MVC', 'Design Patterns']}
+            />
+
+            <ProjectCard
+              title="StudySync"
+              simple_desc="Web app for storing and categorizing academic resources"
+              full_desc="Developed 'StudySync,' a web app for storing and categorizing academic links shared by teachers or the academic office. The system allows students to access resources directly using their matriculation number, with links organized by semester and topic (e.g., timetable, registration). Built a responsive user interface using Vue.js and developed backend APIs with Perl for seamless functionality. Leveraged RESTful API principles, with testing conducted using cURL and Postman. Automated manual link-sharing workflows, enhancing accessibility and saving significant time for both students and staff."
+              date="2022"
+              image="/StudySync.png"
+              projectImg="/studysync.jpg"
+              technologies={[
+                'Vue.js',
+                'Perl',
+                'RESTful API',
+                'cURL',
+                'Postman',
+                'Perl',
+                'Mojolicious',
+              ]}
+              videoLink="https://youtu.be/jG0UOBZC2gY"
+              tags={['Web Application', 'Academic Tool', 'Resource Management']}
+            />
+
+            <ProjectCard
+              title="Web Resume Generator"
+              simple_desc="PHP-based tool for effortless resume creation"
+              full_desc="Developed this project using pure PHP, where I explored its fundamentals during my first year before transitioning to frameworks. This tool enables users to effortlessly create professional resumes by automating PDF generation and ensuring structured formatting. Built with a dynamic interface using HTML, CSS, and JavaScript, it reduces manual effort by 50%, showcasing practical skills and problem-solving."
+              date="2021"
+              image="/ResumeGenerator.png"
+              projectImg=""
+              technologies={[
+                'PHP',
+                'HTML',
+                'CSS',
+                'JavaScript',
+                'PDF Generation',
+              ]}
+              tags={['Tool', 'Productivity', 'First Year Project']}
             />
           </div>
 

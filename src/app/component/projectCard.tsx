@@ -1,25 +1,34 @@
 import React from 'react';
 import Image from 'next/image';
-type projectProps = {
+
+type ProjectProps = {
   title: string;
   simple_desc: string;
   full_desc: string;
   date: string;
-  link: string;
+  link?: string;
   image: string;
-  technologies?: string[]; // Added technologies prop
+  technologies?: string[];
+  videoLink?: string;
+  tags?: string[];
+  projectImg?: string; // Make projectImg optional
 };
 
-const projectCard: React.FC<projectProps> = ({
+const ProjectCard: React.FC<ProjectProps> = ({
   title,
   simple_desc,
   full_desc,
   date,
   link,
   image,
-  technologies = ['React', 'Next.js', 'Tailwind CSS'], // Default technologies
+  technologies = [],
+  videoLink,
+  tags = ['Project'],
+  projectImg,
 }) => {
   const getYoutubeLinkId = (url: string): string | null => {
+    if (!url) return null;
+
     try {
       const parseUrl = new URL(url);
       if (parseUrl.hostname === 'youtu.be') {
@@ -33,7 +42,7 @@ const projectCard: React.FC<projectProps> = ({
     return null;
   };
 
-  const videoId = getYoutubeLinkId(link);
+  const videoId = videoLink ? getYoutubeLinkId(videoLink) : null;
 
   return (
     <div className="rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 bg-white my-5 overflow-hidden">
@@ -87,24 +96,26 @@ const projectCard: React.FC<projectProps> = ({
           <p>{full_desc}</p>
         </div>
 
-        {/* Technologies used - New section */}
-        <div className="mb-4">
-          <h3 className="text-sm font-medium text-gray-700 mb-2">
-            Technologies Used:
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {technologies.map((tech, index) => (
-              <span
-                key={index}
-                className="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-md font-medium"
-              >
-                {tech}
-              </span>
-            ))}
+        {/* Technologies used */}
+        {technologies.length > 0 && (
+          <div className="mb-4">
+            <h3 className="text-sm font-medium text-gray-700 mb-2">
+              Technologies Used:
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {technologies.map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-md font-medium"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
-        {/* Video embed with improved error handling */}
+        {/* Conditional rendering for video, image, or link */}
         {videoId ? (
           <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden shadow-md">
             <iframe
@@ -116,50 +127,73 @@ const projectCard: React.FC<projectProps> = ({
               allowFullScreen
             ></iframe>
           </div>
-        ) : link.includes('youtube.com') || link.includes('youtu.be') ? (
+        ) : videoLink &&
+          (videoLink.includes('youtube.com') ||
+            videoLink.includes('youtu.be')) ? (
           <p className="text-amber-500 text-sm p-2 bg-amber-50 rounded-md">
             <span className="font-medium">Note:</span> Could not parse the
             YouTube link. Please check the URL format.
           </p>
         ) : (
-          <div className="mb-4">
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+          <>
+            {/* Display larger project image when available */}
+            {projectImg && (
+              <div className="relative w-full h-48 sm:h-64 rounded-lg overflow-hidden shadow-md mb-4">
+                <Image
+                  src={projectImg}
+                  fill
+                  alt={title}
+                  className="object-cover"
                 />
-              </svg>
-              Visit Project
-            </a>
-          </div>
+              </div>
+            )}
+
+            {/* Visit project link if available */}
+            {link && (
+              <div className="mb-4">
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                  Visit Project
+                </a>
+              </div>
+            )}
+          </>
         )}
 
         {/* Tags/categories */}
-        <div className="mt-4 flex gap-2">
-          <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-            Startup
-          </span>
-          <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-            Design tool
-          </span>
-        </div>
+        {tags.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {tags.map((tag, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default projectCard;
+export default ProjectCard;
