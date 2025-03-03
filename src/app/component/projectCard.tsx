@@ -7,6 +7,7 @@ type projectProps = {
   date: string;
   link: string;
   image: string;
+  technologies?: string[]; // Added technologies prop
 };
 
 const projectCard: React.FC<projectProps> = ({
@@ -16,6 +17,7 @@ const projectCard: React.FC<projectProps> = ({
   date,
   link,
   image,
+  technologies = ['React', 'Next.js', 'Tailwind CSS'], // Default technologies
 }) => {
   const getYoutubeLinkId = (url: string): string | null => {
     try {
@@ -34,31 +36,45 @@ const projectCard: React.FC<projectProps> = ({
   const videoId = getYoutubeLinkId(link);
 
   return (
-    <div className="rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 bg-white my-5">
+    <div className="rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 bg-white my-5 overflow-hidden">
       <div className="p-6">
         {/* Header with logo/image and title */}
-
-        {/* Header with logo/image and title */}
         <div className="w-full flex items-center gap-4 mb-4">
-          <div className="h-fit w-12 md:w-15 rounded-lg flex items-center justify-center">
-            {/* Placeholder for logo or icon */}
+          <div className="h-fit w-12 md:w-16 rounded-lg flex items-center justify-center">
+            {/* Project logo/icon */}
             <Image
               src={image}
-              width={50}
-              height={20}
-              alt="dsa"
-              className="rounded-lg sm:w-lg"
+              width={60}
+              height={60}
+              alt={title}
+              className="rounded-lg object-cover"
             />
           </div>
-          {/*this si for the title and date*/}
-          <div className="w-full flex flex-col  justify-between ">
+          {/*Title and date*/}
+          <div className="w-full flex flex-col justify-between">
             <div className="flex justify-between items-center gap-4">
-              <div className="">
+              <div>
                 <h2 className="text-sm xsm:text-xl sm:text-xl font-bold">
                   {title}
                 </h2>
               </div>
-              <div className="text-xs sm:text-sm text-gray-400">{date}</div>
+              <div className="text-xs sm:text-sm text-gray-400 flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 mr-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                {date}
+              </div>
             </div>
             <div>
               <p className="text-xs sm:text-sm text-gray-500">{simple_desc}</p>
@@ -71,13 +87,28 @@ const projectCard: React.FC<projectProps> = ({
           <p>{full_desc}</p>
         </div>
 
-        {/* Video embed */}
+        {/* Technologies used - New section */}
+        <div className="mb-4">
+          <h3 className="text-sm font-medium text-gray-700 mb-2">
+            Technologies Used:
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {technologies.map((tech, index) => (
+              <span
+                key={index}
+                className="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-md font-medium"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Video embed with improved error handling */}
         {videoId ? (
-          <div className="relative w-full pt-[56.25%]">
-            {' '}
-            {/* 16:9 aspect ratio */}
+          <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden shadow-md">
             <iframe
-              className="absolute top-0 left-0 w-full h-full rounded-lg"
+              className="absolute top-0 left-0 w-full h-full"
               src={`https://www.youtube.com/embed/${videoId}`}
               title={title}
               frameBorder="0"
@@ -85,8 +116,36 @@ const projectCard: React.FC<projectProps> = ({
               allowFullScreen
             ></iframe>
           </div>
+        ) : link.includes('youtube.com') || link.includes('youtu.be') ? (
+          <p className="text-amber-500 text-sm p-2 bg-amber-50 rounded-md">
+            <span className="font-medium">Note:</span> Could not parse the
+            YouTube link. Please check the URL format.
+          </p>
         ) : (
-          <p className="text-red-500">Invalid YouTube link provided.</p>
+          <div className="mb-4">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+              Visit Project
+            </a>
+          </div>
         )}
 
         {/* Tags/categories */}
