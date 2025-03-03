@@ -21,6 +21,7 @@ import {
 } from 'react-icons/fa';
 
 export default function Home() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showLogoText, setShowLogoText] = useState(false);
 
   return (
